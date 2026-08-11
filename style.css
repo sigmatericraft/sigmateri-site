@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: Georgia, serif;
@@ -10,93 +14,324 @@ body {
   line-height: 1.6;
 }
 
-header {
-  min-height: 70vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 40px 20px;
-  background: linear-gradient(to bottom, #efe6d7, #f8f3eb);
+a {
+  color: inherit;
 }
 
-.hero {
-  max-width: 750px;
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 76px;
+  padding: 12px clamp(18px, 4vw, 56px);
+  border-bottom: 1px solid rgba(143, 122, 92, 0.22);
+  background: rgba(244, 239, 230, 0.94);
+  backdrop-filter: blur(10px);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
 }
 
 .brand-logo {
-  display: block;
-  width: min(160px, 38vw);
-  height: auto;
-  margin: 0 auto 20px;
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  flex: 0 0 auto;
 }
 
-h1 {
-  font-size: clamp(2.5rem, 8vw, 5rem);
-  margin-bottom: 15px;
-  color: #3d2f24;
-}
-
-.subtitle {
-  font-size: 1.2rem;
-  color: #6a5746;
-}
-
-.button {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 22px;
-  border: 1px solid #8f7a5c;
-  border-radius: 30px;
-  color: #4c3b2f;
-  text-decoration: none;
-  background: #e8dcc8;
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.button:hover {
-  background: #ddd0b7;
-  transform: translateY(-1px);
-}
-
-section {
-  max-width: 1000px;
-  margin: auto;
-  padding: 60px 20px;
-}
-
-h2 {
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 35px;
-  color: #433225;
-}
-
-.cards {
+.brand-copy {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  line-height: 1.05;
 }
 
-.card {
-  border: 1px solid #d7c8b3;
-  border-radius: 16px;
-  padding: 25px;
-  background: #fbf8f2;
-  box-shadow: 0 4px 14px rgba(90, 70, 45, 0.08);
+.brand-copy strong {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
-.card h3 {
-  margin-top: 0;
-  color: #4b382a;
+.brand-copy small {
+  margin-top: 5px;
+  color: #786654;
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-.card p {
-  color: #6d5b49;
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 3vw, 32px);
+}
+
+.site-nav a {
+  color: #5f4c3c;
+  font-size: 0.96rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.site-nav a:hover {
+  color: #2f241c;
+}
+
+.showcase {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(28px, 5vw, 56px) 20px 34px;
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  min-height: 330px;
+  max-height: 650px;
+  border: 1px solid #d5c6b1;
+  border-radius: 22px;
+  background: #e7dccb;
+  box-shadow: 0 16px 40px rgba(74, 56, 42, 0.10);
+}
+
+.carousel-slides,
+.slide {
+  position: absolute;
+  inset: 0;
+}
+
+.slide {
+  margin: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.65s ease;
+}
+
+.slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.slide::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 34%;
+  background: linear-gradient(to top, rgba(45, 33, 24, 0.62), transparent);
+}
+
+.slide figcaption {
+  position: absolute;
+  left: clamp(20px, 4vw, 42px);
+  bottom: clamp(20px, 4vw, 34px);
+  z-index: 2;
+  color: #fffaf2;
+  font-size: clamp(1.1rem, 2.4vw, 1.7rem);
+  letter-spacing: 0.01em;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  width: 44px;
+  height: 44px;
+  transform: translateY(-50%);
+  border: 1px solid rgba(255, 250, 242, 0.65);
+  border-radius: 50%;
+  color: #fffaf2;
+  background: rgba(58, 43, 32, 0.36);
+  font: inherit;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+}
+
+.carousel-arrow:hover {
+  background: rgba(58, 43, 32, 0.56);
+}
+
+.carousel-arrow-prev {
+  left: 18px;
+}
+
+.carousel-arrow-next {
+  right: 18px;
+}
+
+.carousel-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  z-index: 4;
+  display: flex;
+  gap: 8px;
+  transform: translateX(-50%);
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 250, 242, 0.52);
+  cursor: pointer;
+}
+
+.carousel-dot.is-active {
+  background: #fffaf2;
+  transform: scale(1.22);
+}
+
+.about,
+.contact {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 68px 24px;
+  text-align: center;
+}
+
+.about {
+  border-top: 1px solid #d9cbb7;
+}
+
+.section-kicker {
+  margin: 0 0 8px;
+  color: #8a745d;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.about h1,
+.contact h2 {
+  margin: 0 0 20px;
+  color: #3d2f24;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 500;
+}
+
+.about p,
+.contact p {
+  margin: 0 auto;
+  color: #6b5847;
+  font-size: 1.05rem;
+}
+
+.contact {
+  padding-top: 48px;
+}
+
+.instagram-button {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 11px 19px;
+  border: 1px solid #9c8568;
+  border-radius: 999px;
+  background: #eee4d4;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.instagram-button:hover {
+  transform: translateY(-1px);
+  background: #e4d7c3;
 }
 
 footer {
-  text-align: center;
-  padding: 40px 20px;
-  color: #7c6a58;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 34px 24px 46px;
+  border-top: 1px solid #d9cbb7;
+  color: #7b6958;
+  font-size: 0.9rem;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  .site-header {
+    align-items: flex-start;
+    min-height: auto;
+    padding: 12px 16px;
+  }
+
+  .brand-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .brand-copy small {
+    display: none;
+  }
+
+  .site-nav {
+    gap: 14px;
+    padding-top: 10px;
+  }
+
+  .site-nav a {
+    font-size: 0.84rem;
+  }
+
+  .carousel {
+    min-height: 390px;
+    aspect-ratio: 4 / 5;
+    border-radius: 16px;
+  }
+
+  .carousel-arrow {
+    width: 38px;
+    height: 38px;
+  }
+
+  .carousel-arrow-prev {
+    left: 12px;
+  }
+
+  .carousel-arrow-next {
+    right: 12px;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .slide,
+  .instagram-button {
+    transition: none;
+  }
 }

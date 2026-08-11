@@ -3,76 +3,89 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sigma & Teri Enchanted Shop — handmade objects, small creative experiments and a little bit of magic.">
 
-  <title>Sigma & Teri Enchanted Shop</title>
+  <title>Sigma & Teri — Enchanted Shop</title>
 
-  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="style.css?v=3">
+  <script src="script.js?v=1" defer></script>
 </head>
 
 <body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Sigma & Teri Enchanted Shop home">
+      <img class="brand-logo" src="logo/logo_2.png" alt="">
+      <span class="brand-copy">
+        <strong>Sigma & Teri</strong>
+        <small>Enchanted Shop</small>
+      </span>
+    </a>
 
-  <header>
-    <div class="hero">
-      <img class="brand-logo" src="logo/logo_2.png" alt="Sigma & Teri Enchanted Shop logo">
-
-      <h1>Sigma & Teri<br>Enchanted Shop</h1>
-
-      <p class="subtitle">
-        Handmade objects, books, digital creations & a little bit of magic.
-      </p>
-
-      <a class="button" href="#creations">
-        Explore
-      </a>
-    </div>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="#creations">Creations</a>
+      <a href="#about">About</a>
+      <a href="https://www.instagram.com/sigmateri.craft/" target="_blank" rel="noreferrer">Instagram</a>
+    </nav>
   </header>
 
-  <main>
+  <main id="top">
+    <section class="showcase" id="creations" aria-label="Featured creations">
+      <div class="carousel" data-carousel>
+        <div class="carousel-slides">
+          <figure class="slide is-active">
+            <img src="handmade/candles/ritual/beeswax_runes.jpg" alt="Handmade beeswax rune candles">
+            <figcaption>Beeswax rune candles</figcaption>
+          </figure>
 
-    <section id="creations">
-      <h2>Our creations</h2>
+          <figure class="slide">
+            <img src="handmade/jewelry/earrings.webp" alt="Handmade earrings">
+            <figcaption>Handmade jewelry</figcaption>
+          </figure>
 
-      <div class="cards">
+          <figure class="slide">
+            <img src="handmade/sets/set1.webp" alt="Handmade enchanted set">
+            <figcaption>Small enchanted sets</figcaption>
+          </figure>
 
-        <div class="card">
-          <h3>Digital</h3>
-          <p>
-            Books, printable creations and digital experiments.
-          </p>
+          <figure class="slide">
+            <img src="handmade/jewelry/spelljars.png" alt="Handmade spell jars">
+            <figcaption>Spell jars & small objects</figcaption>
+          </figure>
+
+          <figure class="slide">
+            <img src="handmade/candles/beeswax_candle.png" alt="Handmade beeswax candle">
+            <figcaption>Handmade candles</figcaption>
+          </figure>
         </div>
 
-        <div class="card">
-          <h3>Handmade</h3>
-          <p>
-            Small batches of candles, jewelry and crafted objects.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Custom</h3>
-          <p>
-            A few selected custom creations when inspiration allows.
-          </p>
-        </div>
-
+        <button class="carousel-arrow carousel-arrow-prev" type="button" data-prev aria-label="Previous image">‹</button>
+        <button class="carousel-arrow carousel-arrow-next" type="button" data-next aria-label="Next image">›</button>
+        <div class="carousel-dots" data-dots aria-label="Choose image"></div>
       </div>
     </section>
 
-    <section>
-      <h2>About</h2>
-
+    <section class="about" id="about">
+      <p class="section-kicker">A small creative project</p>
+      <h1>About</h1>
       <p>
-        Sigma & Teri Enchanted Shop is a small creative project
-        built around things we enjoy making — sometimes useful,
-        sometimes strange, and occasionally a little magical.
+        Sigma & Teri Enchanted Shop is built around things we enjoy making —
+        handmade candles, jewelry, small objects, books and digital creations.
+        Sometimes useful, sometimes strange, and occasionally a little magical.
       </p>
     </section>
 
+    <section class="contact" id="contact">
+      <h2>Stay in touch</h2>
+      <p>New creations, experiments and occasional updates live on Instagram.</p>
+      <a class="instagram-button" href="https://www.instagram.com/sigmateri.craft/" target="_blank" rel="noreferrer">
+        @sigmateri.craft ↗
+      </a>
+    </section>
   </main>
 
   <footer>
-    © Sigma & Teri Enchanted Shop
+    <span>© Sigma & Teri Enchanted Shop</span>
+    <a href="https://www.instagram.com/sigmateri.craft/" target="_blank" rel="noreferrer">Instagram</a>
   </footer>
-
 </body>
 </html>
