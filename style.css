@@ -5,8 +5,9 @@
 body {
   margin: 0;
   font-family: Georgia, serif;
-  background: #151515;
-  color: #f4efe7;
+  background: #f4efe6;
+  color: #4c3b2f;
+  line-height: 1.6;
 }
 
 header {
@@ -16,6 +17,7 @@ header {
   justify-content: center;
   text-align: center;
   padding: 40px 20px;
+  background: linear-gradient(to bottom, #efe6d7, #f8f3eb);
 }
 
 .hero {
@@ -25,21 +27,29 @@ header {
 h1 {
   font-size: clamp(2.5rem, 8vw, 5rem);
   margin-bottom: 15px;
+  color: #3d2f24;
 }
 
 .subtitle {
   font-size: 1.2rem;
-  color: #c9c0b4;
+  color: #6a5746;
 }
 
 .button {
   display: inline-block;
   margin-top: 20px;
   padding: 12px 22px;
-  border: 1px solid #f4efe7;
+  border: 1px solid #8f7a5c;
   border-radius: 30px;
-  color: #f4efe7;
+  color: #4c3b2f;
   text-decoration: none;
+  background: #e8dcc8;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.button:hover {
+  background: #ddd0b7;
+  transform: translateY(-1px);
 }
 
 section {
@@ -52,6 +62,7 @@ h2 {
   font-size: 2rem;
   text-align: center;
   margin-bottom: 35px;
+  color: #433225;
 }
 
 .cards {
@@ -61,22 +72,24 @@ h2 {
 }
 
 .card {
-  border: 1px solid #3b3936;
+  border: 1px solid #d7c8b3;
   border-radius: 16px;
   padding: 25px;
-  background: #1d1d1d;
+  background: #fbf8f2;
+  box-shadow: 0 4px 14px rgba(90, 70, 45, 0.08);
 }
 
 .card h3 {
   margin-top: 0;
+  color: #4b382a;
 }
 
 .card p {
-  color: #bdb5aa;
+  color: #6d5b49;
 }
 
 footer {
   text-align: center;
   padding: 40px 20px;
-  color: #817b73;
+  color: #7c6a58;
 }
